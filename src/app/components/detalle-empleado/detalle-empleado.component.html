@@ -1,0 +1,11 @@
+<div class="container">
+    <h1 class="my-5">Empleado detalle</h1>
+    <div style="border: 1px solid black;">
+        <h3>Apellido: {{empleado.apellido}}</h3>
+        <h3>Oficio: {{empleado.oficio}}</h3>
+        <h3>Salario: {{empleado.salario}}</h3>
+        <h3>Director: {{empleado.director}}</h3>
+    </div>
+    <a [routerLink]="['/']" class="btn btn-danger">Volver</a>
+    <button class="btn btn-primary" (click)="enviarSaludo()">Enviar saludo</button>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 class="my-5" *ngIf="autorizado">Empleados</h1>
+    <h1 class="my-5" *ngIf="!autorizado">No estas autorizado, por favor logueate</h1>
+    <table class="table" *ngIf="autorizado">
+        <thead>
+            <th>Apellido</th>
+            <th>Oficio</th>
+            <th>Detalles</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let empleado of empleados; let i = index">
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.oficio}}</td>
+                <td><button (click)="detalleEmpleado(i)" class="btn btn-primary">Detalles</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="empleado">
+        <app-detalle-empleado [empleado]="empleado" (saludoEmpleado)="metodoPadreAlerta($event)"></app-detalle-empleado>
+    </div>
+</div>
